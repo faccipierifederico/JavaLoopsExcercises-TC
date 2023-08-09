@@ -27,12 +27,13 @@ public class Main {
             word = scanner.nextLine();
         }*/
 
+        // EXC 3:
         // Dada una maratón, realizar un programa que el fin sea informarle a los posibles participantes a qué categoría pertenecen. Para ello,
         // pedir los siguientes datos: dni, nombre y edad; de acuerdo a ello, mostrar por pantalla la categoría correspondiente.
         // Las categorías son: Menores A (de 6 a 10); Menores B (de 11 a 17); Juveniles (de 18 a 30); Adultos (31 a 50); Adultos mayores (mayores de 50).
         // Para finalizar el programa ingresar un valor de DNI 0 y nombre con la palabra "fin".
 
-        System.out.println("Hi! Write your DNI: ");
+/*        System.out.println("Hi! Write your DNI: ");
         Scanner scannerDni = new Scanner(System.in);
         String dni = scannerDni.nextLine();
         System.out.println("Now write your first name:");
@@ -72,6 +73,40 @@ public class Main {
             age = scannerAge.nextInt();
         }
 
-        System.out.println("You finished the application. Good bye!");
+        System.out.println("You finished the application. Good bye!");*/
+
+        // EXC 4:
+        // Realizar un árbol de navidad que tenga una estructura similar a la siguiente, de modo tal que si quiero hacerlo más grande o más chico, pueda hacerlo
+        // con tan sólo cambiar un parámetro (height en este caso).
+        //   *
+        //  ***
+        // *****
+        //*******
+        //  |||
+
+        int height = 8;
+
+        for (int row=0; row<height; row++){
+
+            for(int space=0; space<(height-row-1); space++){
+                System.out.print(" ");                                  // check that in this case I'm using "System.out.print" and I'm not using "System.out.println".
+            }                                                           // this is because "System.out.println" make a line break, and you don't need that yet.
+            for (int asterisk=0; asterisk<(row*2)+1; asterisk++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+
+        int baseTree = 1;
+        for (int base=0; base<baseTree; base++) {
+
+            for (int space=0; space<(height-2); space++) {
+                System.out.print(" ");
+            }
+
+            for (int tree=0; tree<3; tree++) {
+                System.out.print("|");
+            }
+        }
     }
 }
